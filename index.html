@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Quizz NéoSoft pour le Forum PHP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/tachyons.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css"/>
+</head>
+<body class="athelas">
+<div id="quizz-container" class="flex flex-between">
+    <div class="left-block w-50">
+        <div id="img-q0" class="active">
+
+        </div>
+    </div>
+    <form name="quizz" class="right-block w-50 flex flex-column vh-100">
+        <div class="questions q0 justify-center m-auto">
+            <div id="q0" class="question active tc">
+                <button id="q0-intro" role="button" type="button">Démarrez !</button>
+                <input class="dn" type="radio" value="0-0" checked/>
+            </div>
+            <div id="q1" class="question tc">
+                <p>Sur une échelle de 0 à "Meuh", combien aimez-vous les vaches ?</p>
+                <div class="slidecontainer">
+                    <input type="range" name="vache" min="0" max="10" value="" data-default="5"
+                           data-maxValueLabel="Meuh !" class="slider vache"
+                           aria-label="De un à dix, combien aimez vous les vaches ?">
+                    <p class="slider-value"></p>
+                </div>
+                <input class="dn" type="radio" value="1-1" checked/>
+            </div>
+            <div id="q2" class="question tc">
+                <p>Sur une échelle de 0 à "Essai !!!", combien aimez-vous le rugby ?</p>
+                <div class="slidecontainer">
+                    <input type="range" name="rugby" min="0" max="10" value="" data-default="5"
+                           data-maxValueLabel="Essai !!!" class="slider vache"
+                           aria-label="De un à dix, combien aimez vous le rugby ?">
+                    <p class="slider-value"></p>
+                </div>
+                <input class="dn" type="radio" value="2-1" checked/>
+            </div>
+            <div id="q3" class="question tc">
+                <pre class="prettyprint"><code class="language-php">
+echo "TOTO";
+                </code></pre>
+                <input class="dn" type="radio" value="3-1" checked/>
+            </div>
+            <div id="fini" class="question tc">
+                <p>C'est fini !</p>
+
+                <div class="form-group">
+                    <label for="nom">Votre nom</label>
+                    <div class="form-control">
+                        <input type="text" name="nom" id="nom" placeholder="Nom"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="prenom">Votre prénom</label>
+                    <div class="form-control">
+                        <input type="text" name="prenom" id="prenom" placeholder="Prénom"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="fonction">Votre fonction</label>
+                    <div class="form-control">
+                        <input type="text" name="fonction" id="fonction" placeholder="Fonction"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Votre email</label>
+                    <div class="form-control">
+                        <input type="email" name="email" id="email" placeholder="@"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><input type="checkbox" name="accept_coord"> J'accepte de fournir ces informations pour éventuellement être recontacté par le service RH de Néo-Soft.</label>
+                    <p class="hint">Ces données ne sont pas cédées à un tier et vous pouvez exercer votre droit de modification ou de suppression en écrivant à <a href="mailto:emilie.vacher@neo-soft.fr">emilie.vacher@neo-soft.fr</a>.</p>
+                </div>
+
+                <input class="dn" type="radio" value="3-3" checked/>
+            </div>
+        </div>
+        <div class="navigation flex flex-justify">
+            <button id="precedent" name="precedent" role="button" type="button" class="w-50">Précédent</button>
+            <button id="suivant" name="suivant" role="button" type="button" class="w-50">Suivant</button>
+            <button id="soumettre" class="w-50">Valider</button>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="assets/js/index.js"></script>
+<script type="text/javascript" src="assets/js/quizz.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+</body>
+</html>
