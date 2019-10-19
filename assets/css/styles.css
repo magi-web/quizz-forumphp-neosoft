@@ -1,5 +1,77 @@
+.muli {
+    font-family: Muli,sans-serif;
+    line-height: 1.6;
+    letter-spacing: .3px;
+    color: #191919;
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
 .m-auto {
     margin: auto;
+}
+
+.info {
+    border: 2px solid #FFF;
+    border-radius: 25px;
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+svg {
+    max-width: 100%;
+    max-height: 70vh;
+}
+
+.logo-neo #logo-graphic {
+fill: #00a4e6;
+}
+
+form {
+    /*background: url(/assets/img/bg-news-lab.jpg) 100% no-repeat #070d58;*/
+    background-color: #070d58;
+    background-size: auto;
+    background-size: cover;
+
+    color: #FFF;
+}
+
+    /* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+    margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
 }
 
 .questions.q0 + .navigation,
@@ -46,7 +118,7 @@ code.language-php:after {
     transition: visibility 0s, opacity 0.5s linear;
     position: absolute;
     left: 0;
-    top: 0;
+    top: -9000px;
 }
 
 .question.active {
@@ -62,27 +134,56 @@ code.language-php:after {
     width: 100%;
     height: 15px;
     border-radius: 5px;
-    background: #d3d3d3;
+    background: #FFF;
     outline: none;
-    opacity: 0.7;
+    opacity: 0.9;
     -webkit-transition: .2s;
     transition: opacity .2s;
 }
 
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #4CAF50;
-    cursor: pointer;
+button {
+    background-color: transparent;
+    border: 1px solid #FFF;
+    color: #fff;
+    padding: .9em;
+    opacity: 1;
+    transform: translateY(0px) scaleY(1);
 }
 
-.slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #4CAF50;
-    cursor: pointer;
+button:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    width: 100%;
+    height: 0;
+    background-color: #FFF;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    opacity: 0;
+}
+
+button, button::before {
+    -webkit-backface-visibility: hidden;
+    transition: all .6s cubic-bezier(.19,1,.22,1);
+}
+
+button:hover {
+    color: #000;
+}
+
+button:hover::before {
+    height: 100%;
+    opacity: 1;
+}
+
+.linkedin-logo {
+    max-width: 130px;
+    max-height: 29px;
+    vertical-align: bottom;
+}
+
+.linkedin-logo path {
+    fill: #FFF;
 }

@@ -56,7 +56,7 @@ function onPrecedent() {
 function onSuivant() {
     let currentActive = document.querySelector('.questions .active');
     if (currentActive) {
-        let checkedValue = currentActive.querySelector('input[type=radio][checked]');
+        let checkedValue = currentActive.querySelector('input:checked');
         if (checkedValue)
             triggerEvent(document, checkedValue.value);
     }
@@ -142,27 +142,86 @@ function navigateTo(selection, selectionImg, event) {
 // Q0
 new Noeud({
     '0-0': function (event) {
+        document.getElementById('vache-answer').classList.add('dn');
+        document.getElementById('1-1').removeAttribute('checked');
         navigateTo('div#q1', '', event);
     }
 });
 
 // Q1
 new Noeud({
+    'vache-1': function (event) {
+        document.getElementById('vache-answer').classList.remove('dn');
+        document.getElementById('1-1').setAttribute('checked', 'checked');
+    },
     '1-1': function (event) {
+        resetVillaAnswer();
         navigateTo('div#q2', '', event);
     }
 });
 
 // Q2
 new Noeud({
-    '2-1': function (event) {
-        navigateTo('div#q3', '', event);
+    'villa-330000': function (event) {
+        showVillaAnswer();
+    },
+    'villa-530000': function (event) {
+        showVillaAnswer();
+    },
+    'villa-730000': function (event) {
+        showVillaAnswer();
+    },
+    'villa-1300000': function (event) {
+        showVillaAnswer();
+    },
+    'villa-checked': function (event) {
+        navigateTo('div#qProfil', '', event);
+    }
+});
+
+// QProfil
+new Noeud({
+    'dev': function (event) {
+        navigateTo('div#qtech', '', event);
+    },
+    'projet': function (event) {
+        navigateTo('div#qproj', '', event);
+    },
+    'recruteur': function (event) {
+        navigateTo('div#qSujetEntreprise', '', event);
+    },
+    'cto': function (event) {
+        navigateTo('div#qSujetEntreprise', '', event);
+    },
+    'ceo': function (event) {
+        navigateTo('div#qSujetEntreprise', '', event);
     }
 });
 
 // Q3
 new Noeud({
-    '3-1': function (event) {
+    'tech-1': function (event) {
+        navigateTo('div#qproj', '', event);
+    }
+});
+
+new Noeud({
+    'proj-1': function (event) {
+        navigateTo('div#qSujetEntreprise', '', event);
+    }
+});
+
+new Noeud({
+    'sujet-1': function (event) {
         navigateTo('div#fini', '', event);
     }
 });
+
+function resetVillaAnswer() {
+    document.getElementById('villa-answer').classList.add('dn');
+    document.getElementById('villa-checked').removeAttribute('checked');
+}
+function showVillaAnswer() {
+    document.getElementById('villa-answer').classList.remove('dn');
+    document.getElementById('villa-checked').setAttribute('checked', 'checked');
+}

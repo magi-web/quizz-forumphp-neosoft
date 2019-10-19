@@ -16,3 +16,4 @@ function renderSliderValue(elem) {
     }
     elem.nextElementSibling.innerHTML = valueLabel;
 }
+document.forms[0].reset();
