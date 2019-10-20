@@ -29,13 +29,14 @@
                 <input class="dn" type="radio" value="0-0" checked/>
             </div>
             <div id="q1" class="question tc" style="min-width: 500px;">
-                <h2>#VivreALimoges</h2>
+                <h2>#LimogesVilleDeReve</h2>
                 <p>Sur une échelle de 0 à "Meuh", combien aimez-vous les vaches ?</p>
-                <div class="slidecontainer tc ml-auto mr-auto" style="max-width: 500px;">
+                <div class="slidecontainer tc ml-auto mr-auto" style="max-width: 500px;position: relative;
+padding-bottom: 160px;">
                     <input type="range" name="vache" min="0" max="10" value="" data-default="5"
-                           data-maxValueLabel="Meuh !" class="slider vache"
+                           data-maxValueLabel="🐮" class="slider vache"
                            aria-label="De un à dix, combien aimez vous les vaches ?">
-                    <p class="slider-value"></p>
+                    <p class="slider-value" style="position: absolute;text-align: center;width: 100%;"></p>
                 </div>
                 <input id="1-1" class="dn" type="radio" value="1-1"/>
                 <input class="dn" type="radio" value="vache-1" checked/>
@@ -47,10 +48,10 @@
             </div>
             <div id="q2" class="question tc">
                 <input id="villa-checked" class="dn" type="radio" value="villa-checked"/>
-                <h2>#VivreALimoges</h2>
+                <h2>#LimogesVilleDeReve</h2>
                 <p>Combien coûte cette magnifique villa de 240m² à 10km de Limoges ?</p>
                 <div class="nested-list-reset mt2 flex flex-row justify-center">
-                    <img class="mr3" src="assets/img/palace.jpg" alt="Villa de 240m²" style="max-width: 35%"/>
+                    <img class="mr3" src="assets/img/palace.jpg" alt="Villa de 240m²" style="max-width: 45%"/>
                     <ul class="tl w-30">
                         <li class="mt2"><label><input type="radio" name="villa[]" value="villa-330000"> 330 000 €</label></li>
                         <li class="mt2"><label><input type="radio" name="villa[]" value="villa-530000"> 530 000 €</label></li>
@@ -80,18 +81,18 @@
 echo "Quelles technos pratiquez-vous ?";
                 </code></pre>
                 <input class="dn" type="radio" value="tech-1" checked/>
-                <ul class="tl">
-                    <li class="mt2"><label><input type="checkbox" name="tech[]" value="PHP"> PHP</label></li>
-                    <li class="mt2"><label><input type="checkbox" name="tech[]" value="Java"> Java</label></li>
-                    <li class="mt2"><label><input type="checkbox" name="tech[]" value="Python"> Python</label></li>
-                    <li class="mt2"><label><input type="checkbox" name="tech[]" value="Symfony"> Symfony</label></li>
-                    <li class="mt2"><label><input type="checkbox" name="tech[]" value="Laravel"> Laravel</label></li>
-                    <li class="mt2"><label><input type="checkbox" name="tech[]" value="jQuery"> jQuery</label></li>
-                    <li class="mt2"><label><input type="checkbox" name="tech[]" value="Angular"> Angular</label></li>
-                    <li class="mt2"><label><input type="checkbox" name="tech[]" value="React"> React</label></li>
-                    <li class="mt2"><label><input type="checkbox" name="tech[]" value="Mysql"> Mysql</label></li>
-                    <li class="mt2"><label><input type="checkbox" name="tech[]" value="PostgreSQL"> PostgreSQL</label></li>
-                    <li class="mt2"><label><input type="checkbox" name="tech[]" value="JohnSnow"> Rien de tout ça</label></li>
+                <ul class="tl flex flex-row flex-wrap">
+                    <li class="pl5 mt2 w-50"><label><input type="checkbox" name="tech[]" value="PHP"> PHP</label></li>
+                    <li class="pl5 mt2 w-50"><label><input type="checkbox" name="tech[]" value="Java"> Java</label></li>
+                    <li class="pl5 mt2 w-50"><label><input type="checkbox" name="tech[]" value="Python"> Python</label></li>
+                    <li class="pl5 mt2 w-50"><label><input type="checkbox" name="tech[]" value="Symfony"> Symfony</label></li>
+                    <li class="pl5 mt2 w-50"><label><input type="checkbox" name="tech[]" value="Laravel"> Laravel</label></li>
+                    <li class="pl5 mt2 w-50"><label><input type="checkbox" name="tech[]" value="jQuery"> jQuery</label></li>
+                    <li class="pl5 mt2 w-50"><label><input type="checkbox" name="tech[]" value="Angular"> Angular</label></li>
+                    <li class="pl5 mt2 w-50"><label><input type="checkbox" name="tech[]" value="React"> React</label></li>
+                    <li class="pl5 mt2 w-50"><label><input type="checkbox" name="tech[]" value="Mysql"> Mysql</label></li>
+                    <li class="pl5 mt2 w-50"><label><input type="checkbox" name="tech[]" value="PostgreSQL"> PostgreSQL</label></li>
+                    <li class="pl5 mt2 w-50"><label><input type="checkbox" name="tech[]" value="JohnSnow"> Rien de tout ça</label></li>
                 </ul>
             </div>
             <div id="qproj" class="question tc nested-list-reset">
@@ -110,13 +111,13 @@ echo "Quelles technos pratiquez-vous ?";
                 <input class="dn" type="radio" value="sujet-1" checked/>
                 <p>Parmi ces sujets, lesquels vous semblent importants ?</p>
                 <ul class="tl">
-                    <li class="mt2"><label><input type="checkbox" name="avantage[]" value="deconnexion"> Droit à la déconnexion <span class="info" title="La messagerie est coupée de 22h à 7h et le dimanche toute la journée">i</span></label></li>
-                    <li class="mt2"><label><input type="checkbox" name="avantage[]" value="periode-essai"> Pas de période d'essai à l'embauche</label></li>
-                    <li class="mt2"><label><input type="checkbox" name="avantage[]" value="teletravail"> Télétravail</label></li>
-                    <li class="mt2"><label><input type="checkbox" name="avantage[]" value="mobilite"> Pas de mobilité</label></li>
-                    <li class="mt2"><label><input type="checkbox" name="avantage[]" value="salaire"> L'évolution salariale</label></li>
-                    <li class="mt2"><label><input type="checkbox" name="avantage[]" value="formation"> Accès aux formations</label></li>
-                    <li class="mt2"><label><input type="checkbox" name="avantage[]" value="greenIT"> GreenIT</label></li>
+                    <li class="mt3"><label><input type="checkbox" name="avantage[]" value="deconnexion"> Droit à la déconnexion <span class="info" title="La messagerie est coupée de 22h à 7h et le dimanche toute la journée.">i</span></label></li>
+                    <li class="mt3"><label><input type="checkbox" name="avantage[]" value="periode-essai"> Pas de période d'essai à l'embauche <span class="info" title="L'employeur renonce à la période d'essai lors d'une nouvelle embauche.">i</span></label></li>
+                    <li class="mt3"><label><input type="checkbox" name="avantage[]" value="teletravail"> Télétravail</label></li>
+                    <li class="mt3"><label><input type="checkbox" name="avantage[]" value="mobilite"> Pas de mobilité <span class="info" title="L'employeur ne vous envoie pas en dehors de la région pour effectuer votre mission.">i</span></label></li>
+                    <li class="mt3"><label><input type="checkbox" name="avantage[]" value="salaire"> L'évolution salariale</label></li>
+                    <li class="mt3"><label><input type="checkbox" name="avantage[]" value="formation"> Accès aux formations <span class="info" title="Vous avez accès à un catalogue de formations et des ressources en lignes.">i</span></label></li>
+                    <li class="mt3"><label><input type="checkbox" name="avantage[]" value="greenIT"> GreenIT</label></li>
                 </ul>
             </div>
             <div id="fini" class="question tc flex flex-column justify-between">
@@ -137,7 +138,26 @@ echo "Quelles technos pratiquez-vous ?";
                     <img src="assets/img/linkedin_qrcode.jpg" style="max-width: 100%; max-height: 60vh;"/>
                 </p>
 
-                <div class="dn">
+
+
+                <input class="dn" type="radio" value="3-3" checked/>
+            </div>
+        </div>
+        <div class="navigation flex flex-justify w-90 tc ml-auto mr-auto mb3">
+            <button id="precedent" name="precedent" role="button" type="button" class="w-50">Précédent</button>
+            <button id="suivant" name="suivant" role="button" type="button" class="w-50">Suivant</button>
+            <button id="soumettre" onclick="onRenewParty()" class="w-50">Revenir au début</button>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="assets/js/index.js"></script>
+<script type="text/javascript" src="assets/js/quizz.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+</body>
+</html>
+
+<!--
+<div class="dn">
 
                     <div class="form-group">
                         <label for="nom">Votre nom</label>
@@ -172,19 +192,4 @@ echo "Quelles technos pratiquez-vous ?";
                         <p class="hint">Ces données ne sont pas cédées à un tier et vous pouvez exercer votre droit de modification ou de suppression en écrivant à <a href="mailto:emilie.vacher@neo-soft.fr">emilie.vacher@neo-soft.fr</a>.</p>
                     </div>
                 </div>
-
-                <input class="dn" type="radio" value="3-3" checked/>
-            </div>
-        </div>
-        <div class="navigation flex flex-justify w-90 tc ml-auto mr-auto mb3">
-            <button id="precedent" name="precedent" role="button" type="button" class="w-50">Précédent</button>
-            <button id="suivant" name="suivant" role="button" type="button" class="w-50">Suivant</button>
-            <button id="soumettre" class="w-50">Valider</button>
-        </div>
-    </form>
-</div>
-<script type="text/javascript" src="assets/js/index.js"></script>
-<script type="text/javascript" src="assets/js/quizz.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-</body>
-</html>
+-->

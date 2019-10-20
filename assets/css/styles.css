@@ -141,6 +141,10 @@ code.language-php:after {
     transition: opacity .2s;
 }
 
+.slider-value.max-value-reached {
+    font-size: 3rem;
+}
+
 button {
     background-color: transparent;
     border: 1px solid #FFF;

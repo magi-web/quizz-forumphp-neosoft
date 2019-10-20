@@ -213,6 +213,7 @@ new Noeud({
 
 new Noeud({
     'sujet-1': function (event) {
+        storeSelection();
         navigateTo('div#fini', '', event);
     }
 });
