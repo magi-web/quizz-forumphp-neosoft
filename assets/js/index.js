@@ -133,6 +133,32 @@ function storeEmail() {
     }
 }
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function lancerTirage() {
+    let emails = localStorage.getItem('emails');
+    if (emails) {
+        emails = emails.split('|');
+        if (emails.length) {
+            let selectedEmail = null;
+
+            document.getElementById('tirage-content').classList.remove('v-hidden');
+
+            for (let i = 0; i < 20; i++) {
+                let random = Math.floor(Math.random() * emails.length);
+                document.getElementById('tirage-selection').innerHTML = emails[random];
+                selectedEmail = emails[random];
+                await sleep( i * 10);
+            }
+            document.getElementById('tirage-content').classList.add('active');
+            localStorage.setItem('gagnant-tirage', selectedEmail);
+            download('gagnant-tirage-quizz-forumPHP2019.txt', selectedEmail);
+        }
+    }
+
+}
 
 function onRenewParty(e) {
     if (e) {

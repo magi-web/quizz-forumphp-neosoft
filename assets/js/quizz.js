@@ -259,3 +259,12 @@ function showVillaAnswer() {
     document.getElementById('villa-answer').classList.remove('v-hidden');
     document.getElementById('villa-checked').setAttribute('checked', 'checked');
 }
+
+document.addEventListener('konami', function(e) {
+    let order = prompt("Que souhaitez vous faire ?","Entrez 'tirage' ou 'export'");
+    if (order === 'tirage') {
+        navigateTo('div#tirage', '', e);
+    } else if (order === 'export') {
+        saveLocalStorageToFile();
+    }
+});

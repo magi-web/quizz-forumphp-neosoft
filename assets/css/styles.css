@@ -88,6 +88,7 @@ input[type=range]::-ms-thumb {
 }
 
 .questions.q0 + .navigation,
+.questions.tirage + .navigation,
 .questions.fini + .navigation > #suivant,
 .questions + .navigation > #soumettre {
     display: none;
@@ -193,6 +194,11 @@ button:hover {
 button:hover::before {
     height: 100%;
     opacity: 1;
+}
+
+#tirage-content.active {
+    color: #000;
+    background-color: #fff;
 }
 
 .linkedin-logo {

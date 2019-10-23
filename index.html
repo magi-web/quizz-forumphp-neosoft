@@ -165,6 +165,12 @@ A tout moment, vous pouvez demander la suppression de vos données par mail à d
 
                 <input class="dn" type="radio" value="3-3" checked/>
             </div>
+            <div id="tirage" class="question flex flex-column justify-between" style="min-width: 500px">
+                <p class="tc">
+                    <button role="button" onclick="lancerTirage()">Lancer le tirage au sort</button>
+                </p>
+                <p id="tirage-content" class="v-hidden">Le gagnant est : <span id="tirage-selection"></span></p>
+            </div>
         </div>
         <div class="navigation flex flex-justify w-90 tc ml-auto mr-auto mb3">
             <button id="precedent" name="precedent" role="button" type="button" class="w-50">Précédent</button>
@@ -175,6 +181,7 @@ A tout moment, vous pouvez demander la suppression de vos données par mail à d
 </div>
 <script type="text/javascript" src="assets/js/index.js"></script>
 <script type="text/javascript" src="assets/js/quizz.js"></script>
+<script type="text/javascript" src="assets/js/konami.js"></script>
 <script type="text/javascript" src="assets/js/run_prettify.js"></script>
 </body>
 </html>
