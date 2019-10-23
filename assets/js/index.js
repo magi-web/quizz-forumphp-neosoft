@@ -98,10 +98,12 @@ function isEmailValid() {
     email.setCustomValidity('');
 
     let valid = email.checkValidity();
+    /*
     if (valid && isNonUniqueEmail()) {
         valid = false;
         email.setCustomValidity('Cet email est déjà présent. Veuillez entrer une adresse différente.');
     }
+    */
     return email.value.trim() === '' || valid;
 }
 
@@ -120,7 +122,7 @@ function isNonUniqueEmail() {
 function storeEmail() {
     let email = getEmailField();
 
-    if (email.value.trim() !== '') {
+    if (email.value.trim() !== '' && isNonUniqueEmail() === false) {
         let emails = localStorage.getItem('emails');
         if (emails === null) {
             emails = '';
@@ -173,6 +175,7 @@ function onRenewParty(e) {
     } else {
         if (isEmailValid()) {
             storeEmail();
+            storeSelection();
             renew = confirm('C\'est terminé ! Revenir au début ?');
             if (renew) {
                 document.forms[0].reset();
