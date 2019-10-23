@@ -141,18 +141,23 @@ function onRenewParty(e) {
     }
 
     let renew = false;
-    if (isEmailValid()) {
-        storeEmail();
-        renew = confirm('C\'est terminé ! Revenir au début ?');
-        if (renew) {
-            document.forms[0].reset();
-            navigateTo('div#q0');
-            historyEvents = [];
-        }
+    let isOnLastSlide = document.getElementById('fini').classList.contains('active');
+    if (isOnLastSlide === false) {
+        document.getElementById('suivant').click();
     } else {
-        let email = getEmailField();
-        alert(email.validationMessage);
-        email.focus();
+        if (isEmailValid()) {
+            storeEmail();
+            renew = confirm('C\'est terminé ! Revenir au début ?');
+            if (renew) {
+                document.forms[0].reset();
+                navigateTo('div#q0');
+                historyEvents = [];
+            }
+        } else {
+            let email = getEmailField();
+            alert(email.validationMessage);
+            email.focus();
+        }
     }
     return renew;
 }
