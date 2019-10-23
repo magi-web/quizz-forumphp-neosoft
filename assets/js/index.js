@@ -50,7 +50,7 @@ function storeSelection(e) {
         new FormData(document.forms[0])
     ));
     let now = new Date();
-    let key = now.toUTCString();
+    let key = now.toISOString();
     let value = JSON.stringify(object);
     localStorage.setItem(key, value);
     return false;
@@ -93,7 +93,7 @@ function getEmailField() {
 
 function isEmailValid() {
     let email = getEmailField();
-    
+
     // On reset le customValidity.
     email.setCustomValidity('');
 
