@@ -142,7 +142,7 @@ function navigateTo(selection, selectionImg, event) {
 // Q0
 new Noeud({
     '0-0': function (event) {
-        document.getElementById('vache-answer').classList.add('dn');
+        document.getElementById('vache-answer').classList.add('v-hidden');
         document.getElementById('1-1').removeAttribute('checked');
         navigateTo('div#q1', '', event);
     }
@@ -151,15 +151,38 @@ new Noeud({
 // Q1
 new Noeud({
     'vache-1': function (event) {
-        document.getElementById('vache-answer').classList.remove('dn');
+        document.getElementById('vache-answer').classList.remove('v-hidden');
         document.getElementById('1-1').setAttribute('checked', 'checked');
     },
     '1-1': function (event) {
+        resetBarAnswer();
+        navigateTo('div#qbar', '', event);
+    }
+});
+
+// QBar
+new Noeud({
+    'bar-1': function (event) {
+        document.getElementById('bar-answer').classList.remove('v-hidden');
+        document.getElementById('bar-2').setAttribute('checked', 'checked');
+    },
+    'bar-50': function (event) {
+        showBarAnswer();
+    },
+    'bar-70': function (event) {
+        showBarAnswer();
+    },
+    'bar-100': function (event) {
+        showBarAnswer();
+    },
+    'bar-150': function (event) {
+        showBarAnswer();
+    },
+    'bar-checked': function (event) {
         resetVillaAnswer();
         navigateTo('div#q2', '', event);
     }
 });
-
 // Q2
 new Noeud({
     'villa-330000': function (event) {
@@ -218,11 +241,21 @@ new Noeud({
     }
 });
 
+
+function resetBarAnswer() {
+    document.getElementById('bar-answer').classList.add('v-hidden');
+    document.getElementById('bar-checked').removeAttribute('checked');
+}
+function showBarAnswer() {
+    document.getElementById('bar-answer').classList.remove('v-hidden');
+    document.getElementById('bar-checked').setAttribute('checked', 'checked');
+}
+
 function resetVillaAnswer() {
-    document.getElementById('villa-answer').classList.add('dn');
+    document.getElementById('villa-answer').classList.add('v-hidden');
     document.getElementById('villa-checked').removeAttribute('checked');
 }
 function showVillaAnswer() {
-    document.getElementById('villa-answer').classList.remove('dn');
+    document.getElementById('villa-answer').classList.remove('v-hidden');
     document.getElementById('villa-checked').setAttribute('checked', 'checked');
 }

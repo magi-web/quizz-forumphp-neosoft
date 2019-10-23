@@ -87,20 +87,79 @@ function saveLocalStorageToFile() {
     download(file, content);
 }
 
+function getEmailField() {
+    return document.getElementById('email');
+}
+
+function isEmailValid() {
+    let email = getEmailField();
+    
+    // On reset le customValidity.
+    email.setCustomValidity('');
+
+    let valid = email.checkValidity();
+    if (valid && isNonUniqueEmail()) {
+        valid = false;
+        email.setCustomValidity('Cet email est déjà présent. Veuillez entrer une adresse différente.');
+    }
+    return email.value.trim() === '' || valid;
+}
+
+function isNonUniqueEmail() {
+    let email = getEmailField().value;
+
+    let emails = localStorage.getItem('emails');
+    let isNonUnique = false;
+    if (emails !== null) {
+        emails = emails.split('|');
+        isNonUnique = emails.indexOf(email) !== -1;
+    }
+    return isNonUnique;
+}
+
+function storeEmail() {
+    let email = getEmailField();
+
+    if (email.value.trim() !== '') {
+        let emails = localStorage.getItem('emails');
+        if (emails === null) {
+            emails = '';
+        } else {
+            emails += '|';
+        }
+        emails += email.value;
+
+        localStorage.setItem('emails', emails);
+    }
+}
+
+
 function onRenewParty(e) {
     if (e) {
         e.preventDefault();
         e.stopPropagation();
     }
-    let renew = confirm('Êtes-vous sûr de vouloir revenir au début ?');
-    if (renew) {
-        document.forms[0].reset();
-        navigateTo('div#q0');
-        historyEvents = [];
+
+    let renew = false;
+    if (isEmailValid()) {
+        storeEmail();
+        renew = confirm('C\'est terminé ! Revenir au début ?');
+        if (renew) {
+            document.forms[0].reset();
+            navigateTo('div#q0');
+            historyEvents = [];
+        }
+    } else {
+        let email = getEmailField();
+        alert(email.validationMessage);
+        email.focus();
     }
     return renew;
 }
 
 document.forms[0].reset();
 
-document.forms[0].onsubmit = function(e) {e.preventDefault(); e.stopPropagation();};
+document.forms[0].onsubmit = function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+};

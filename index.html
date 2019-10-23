@@ -9,8 +9,8 @@
 </head>
 <body class="muli">
 <div id="quizz-container" class="flex flex-between">
-    <div class="left-block w-50 flex">
-        <div id="img-q0" class="active tc justify-center m-auto">
+    <div class="left-block w-50 flex" style="background-color: #40c1ab">
+        <div id="img-q0" class="active tc justify-center m-auto" >
             <svg class="logo-neo" enable-background="new 0 0 283 337" viewBox="0 0 283 337" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
                 <title id="logoTitle">www.neo-soft.fr</title>
                 <desc id="logoDesc">Néo-Soft Groupe</desc>
@@ -20,6 +20,10 @@
                 </g>
                 <g id="logo-lettrage" fill="#686868"><path d="m28.7 317.9-24.7-34c-.4-.6-1.2-.9-2-.7l-.3-.5v.6c-.7.3-1.2 1-1.2 1.7v40.8h3.9v-34.8l24.6 34c.4.6 1.2.9 2 .7l.3.4v-.6c.7-.3 1.2-1 1.2-1.7l.1-38.9v-1.9h-3.9z"></path><path d="m41.7 285v38.9c0 1.1.8 1.9 1.9 1.9h29v-3.9h-27v-15.6h19.8v-3.9h-19.8v-15.4h27.1v-3.9h-29c-1.2 0-2 .8-2 1.9"></path><path d="m96 283.1c-10.5 0-19 9.6-19 21.4s8.5 21.4 19 21.4 19-9.6 19-21.4-8.5-21.4-19-21.4m0 3.9c8.4 0 15.1 7.9 15.1 17.5s-6.8 17.5-15.1 17.5c-8.4 0-15.1-7.9-15.1-17.5 0-9.7 6.8-17.5 15.1-17.5"></path><path d="m160.1 302.5c-5.6-2.1-11.4-4.3-11.4-7.7 0-4.3 4.7-7.8 10.4-7.8s10.4 3.5 10.4 7.8v1.9h3.9v-1.9c0-6.4-6.4-11.6-14.2-11.6-7.9 0-14.2 5.2-14.2 11.7 0 6.2 7.3 8.9 14.3 11.6 5.7 2.1 11.5 4.3 11.5 7.9 0 4.1-5.4 7.8-11.6 7.8-6.3 0-11.6-3.6-11.6-7.8v-1.9h-3.9v1.9c0 6.4 6.9 11.6 15.5 11.6 8.4 0 15.5-5.3 15.5-11.6-.2-6.5-7.5-9.3-14.6-11.9"></path><path d="m196.7 283.1c-10.5 0-19 9.6-19 21.4s8.5 21.4 19 21.4 19-9.6 19-21.4-8.5-21.4-19-21.4m0 38.8c-8.3 0-15.1-7.9-15.1-17.5s6.8-17.5 15.1-17.5c8.4 0 15.1 7.9 15.1 17.5.1 9.7-6.7 17.5-15.1 17.5"></path><path d="m249.9 283.1h-.3-25.2c-1.1 0-1.9.8-1.9 1.9v40.8h3.9v-19.4h17.1v-3.9h-17.1v-15.5h23.2.3 14.5v38.9h3.9v-38.9h14.7v-3.9z"></path><path d="m127.9 266h3.3v71h-3.3z"></path></g>
             </svg>
+            <img class="dn" src="assets/img/accueil_quizz.jpg" style="max-width: 100%; margin-top: 60px">
+            <p>#LimogesVilleDeReve</p>
+            <p>Participez à notre quizz<br>et tentez de remporter un<br>drone avec caméra HD</p>
+
         </div>
     </div>
     <form name="quizz" class="right-block w-50 flex flex-column vh-100">
@@ -40,10 +44,27 @@ padding-bottom: 160px;">
                 </div>
                 <input id="1-1" class="dn" type="radio" value="1-1"/>
                 <input class="dn" type="radio" value="vache-1" checked/>
-                <p id="vache-answer" class="dn">
-                    Les Limougeauds aiment manger, et on peut dire que Limoges met les bouchées doubles pour les satisfaire !<br>
-                    <strong>La Frairie des petits ventres et Toques et Porcelaines</strong> sont 2 événements gastronomiques emblématiques à Limoges.
-                    De plus, la ville compte <strong>pas moins de 150 bars</strong> donc vous aurez toujours un endroit où commencer (ou finir)  votre soirée.
+                <p id="vache-answer" class="">
+                    Où que vous soyez à Limoges, vous serez toujours à 15 mn maximum (circulation incluse)<br>de notre magnifique campagne limousine.<br>
+                    Vous pourrez ainsi admirer nos vaches, ou profitez des nombreuses activités qui s’offrent à vous.
+                </p>
+            </div>
+            <div id="qbar" class="question tc">
+                <input id="bar-checked" class="dn" type="radio" value="bar-checked"/>
+                <h2>#LimogesVilleDeReve</h2>
+                <p>Selon vous dans combien de bars peut-on sortir boire un verre à Limoges ?</p>
+                <div class="nested-list-reset mt2 flex flex-row justify-center">
+                    <img class="mr3" src="assets/img/limoges_bar.jpg" alt="Bar" style="max-width: 45%"/>
+                    <ul class="tl w-30">
+                        <li class="mt2"><label><input type="radio" name="bar[]" value="bar-50"> 50</label></li>
+                        <li class="mt2"><label><input type="radio" name="bar[]" value="bar-70"> 70</label></li>
+                        <li class="mt2"><label><input type="radio" name="bar[]" value="bar-100"> 100</label></li>
+                        <li class="mt2"><label><input type="radio" name="bar[]" value="bar-150"> 150</label></li>
+                    </ul>
+                </div>
+                <p id="bar-answer" class="v-hidden">
+                    <strong>Avec pas moins de 150 bars</strong>, vous n’aurez que l’embarras du choix pour aller boire un verre !<br>
+                    Limoges est aussi reconnue pour sa gastronomie avec notamment deux évènements emblématiques : <strong>La Frairie des petits ventres</strong> et la biennale <strong>Toques et Porcelaine</strong>.
                 </p>
             </div>
             <div id="q2" class="question tc">
@@ -60,7 +81,7 @@ padding-bottom: 160px;">
                     </ul>
                 </div>
 
-                <p id="villa-answer" class="dn">
+                <p id="villa-answer" class="">
                     Limoges est l’une des villes les moins chères de France au m². Profitez-en pour vous faire plaisir !<br>
                     Comme avec cette magnifique villa de 240m² à 10km de Limoges vendue à 330 000€ !
                 </p>
@@ -116,12 +137,13 @@ echo "Quelles technos pratiquez-vous ?";
                     <li class="mt3"><label><input type="checkbox" name="avantage[]" value="teletravail"> Télétravail</label></li>
                     <li class="mt3"><label><input type="checkbox" name="avantage[]" value="mobilite"> Pas de mobilité <span class="info" title="L'employeur ne vous envoie pas en dehors de la région pour effectuer votre mission.">i</span></label></li>
                     <li class="mt3"><label><input type="checkbox" name="avantage[]" value="salaire"> L'évolution salariale</label></li>
-                    <li class="mt3"><label><input type="checkbox" name="avantage[]" value="formation"> Accès aux formations <span class="info" title="Vous avez accès à un catalogue de formations et des ressources en lignes.">i</span></label></li>
+                    <li class="mt3"><label><input type="checkbox" name="avantage[]" value="formation"> Accès aux formations <span class="info" title="L'employeur s'engage à vous former au moins 2 jours par an">i</span></label></li>
                     <li class="mt3"><label><input type="checkbox" name="avantage[]" value="greenIT"> GreenIT</label></li>
                 </ul>
             </div>
             <div id="fini" class="question tc flex flex-column justify-between">
-                <p>C'est fini ! Merci pour votre participation !</p>
+                <p>C'est fini !</p>
+                <p>Vous souhaitez participer au tirage au sort et tenter de gagner un drone ?<br><br>Entrez votre email : <input id="email" type="email" class="w-60 tc" name="email" placeholder="email" value=""></p>
                 <p>
                     Pourquoi ne pas rester en contact sur
                     <svg id="Group_1280" class="linkedin-logo" data-name="Group 1280" xmlns="http://www.w3.org/2000/svg" width="267.504" height="65.326" viewBox="0 0 267.504 65.326">
@@ -146,7 +168,7 @@ echo "Quelles technos pratiquez-vous ?";
         <div class="navigation flex flex-justify w-90 tc ml-auto mr-auto mb3">
             <button id="precedent" name="precedent" role="button" type="button" class="w-50">Précédent</button>
             <button id="suivant" name="suivant" role="button" type="button" class="w-50">Suivant</button>
-            <button id="soumettre" onclick="onRenewParty()" class="w-50">Revenir au début</button>
+            <button id="soumettre" onclick="onRenewParty()" class="w-50">Valider</button>
         </div>
     </form>
 </div>
